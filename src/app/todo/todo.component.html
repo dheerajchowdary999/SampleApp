@@ -1,0 +1,136 @@
+<div class="container">
+  <div class="row">
+    <h3>ADD TODOS</h3>
+    <input type="number" [(ngModel)]="Id" class="form-control" placeholder="Enter Id"><br>
+    <input type="text" [(ngModel)]="Title" class="form-control" placeholder="Enter Title"><br>
+    <input type="text" [(ngModel)]="Status" class="form-control" placeholder="Enter Status">
+    <!-- <h4 class="title" >status</h4> -->
+    <!-- <label class="radiocontainer">Done
+      <input type="radio">
+      <span class="circle"></span>
+    </label><br>
+    <label class="radiocontainer">Pending
+      <input type="radio">
+      <span class="circle"></span> -->
+    <!-- </label><br><br> -->
+    <button (click)="onTaskAdd()" class="btn btn-primary">Add Task</button>
+    <body>
+
+  </body>
+
+
+
+  </div>
+  <div class="row">
+    <h3> Todos</h3>
+    <table class="table">
+      <thead>
+        <th style="border: black solid 1px;">ID</th>
+        <th style="border: black solid 1px;" position="middle">TITLE</th>
+        <th style="border: black solid 1px;">STATUS</th>
+        <th style="border: black solid 1px;">ACTIONS</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of todolist">
+          <td style="border: black silid 1px;">{{item.Id}}</td>
+          <td style="border: black silid 1px;">{{item.Title}}</td>
+          <!--<td *ngIf="item.status=='pending'"> <span style="color:red ;"> {{item.status}} </span> </td>
+        <td *ngIf="item.status=='done'"> <span style="color:green ;"> {{item.status}} </span> </td>-->
+          <td> <span [ngClass]="{done: item.Status=='done','pending':item.Status=='pending'}"> {{item.Status}} </span>
+          </td>
+          <td>
+            <button (click)="onDeleteTask(item)" class="btn btn-primary">Delete</button> &nbsp;
+            <button (click)="onEditTask(item)" class="btn btn-primary">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <h3>ADD EMPLOYEE</h3>
+    <input type="text" [(ngModel)]="user_email" class="form-control" placeholder="Enter Email"><br>
+    <input type="text" [(ngModel)]="user_name" class="form-control" placeholder="Enter Name"><br>
+    <input type="text" [(ngModel)]="user_password" class="form-control" placeholder="Enter Password"><br>
+    <input type="text" [(ngModel)]="user_mobile_no" class="form-control" placeholder="Enter number"><br>
+    <!--input type="text" [(ngModel)]="status" class="form-control" placeholder="Enter STATUS"--><br>
+    <!-- <form>
+      <h5>Status:-</h5>
+      <select name="status">
+        <option value="done"> done</option>
+        <option value="pending">pending</option>
+      </select><br>
+    </form><br><br> -->
+    <button (click)="onAddEmp()" class="btn btn-primary">Add Employee</button>
+  </div>
+  <div class="row">
+    <h3> EMPLOYEE</h3>
+    <table class="table">
+      <thead>
+        <th style="border: black solid 1px;">Email</th>
+        <th style="border: black solid 1px;">Name</th>
+        <th style="border: black solid 1px;">Password</th>
+        <th style="border: black solid 1px;">Mobile No</th>
+        <!-- <th  style="border: black solid 1px;">STSTUS</th> -->
+        <th  style="border: black solid 1px;">ACTIONS</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of employelist">
+          <td style="border: black silid 1px;">{{item.user_email}}</td>
+          <td style="border: black silid 1px;">{{item.user_name}}</td>
+          <td style="border: black silid 1px;">{{item.user_password}}</td>
+          <td style="border: black silid 1px;">{{item.user_mobile_no}}</td>
+          <td>
+            <button (click)="onDeleteEmp(item)" class="btn btn-primary">Delete</button>
+            <!-- <button (click)="onEditEmp(item)" style="background-color: blue;">Edit</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <h3>ADD PRODUCT</h3>
+    <input type="text" [(ngModel)]="pro_id" class="form-control" placeholder="Enter ID"><br>
+    <input type="text" [(ngModel)]="pro_name" class="form-control" placeholder="Enter Name"><br>
+    <input type="text" [(ngModel)]="pro_price" class="form-control" placeholder="Enter Price"><br>
+    <input type="text" [(ngModel)]="pro_desc" class="form-control" placeholder="Enter desc"><br>
+    <input type="text" [(ngModel)]="pro_qty" class="form-control" placeholder="Enter Quantity"><br>
+    <input type="text" [(ngModel)]="pro_mgf" class="form-control" placeholder="Enter STATUS"><br>
+    <input type="text" [(ngModel)]="pro_image" class="form-control" placeholder="Enter Image"><br>
+    <button (click)="onAddProduct()" class="btn btn-primary">Add Product</button>
+  </div>
+  <div class="row">
+    <h3> PRODUCT</h3>
+    <table class="table">
+      <thead>
+        <th style="border: black solid 1px;">ID</th>
+        <th  style="border: black solid 1px;">Name</th>
+        <th style="border: black solid 1px;">Price</th>
+        <th style="border: black solid 1px;">Description</th>
+        <th style="border: black solid 1px;">Qty</th>
+        <th style="border: black solid 1px;" >Mgf</th>
+        <th style="border: black solid 1px;">Image</th>
+        <th style="border: black solid 1px;">Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productlist">
+          <td style="border: black silid 1px;">{{item.pro_id}}</td>
+          <td style="border: black silid 1px;">{{item.pro_name}}</td>
+          <td style="border: black silid 1px;">{{item.pro_price}}</td>
+          <td style="border: black silid 1px;">{{item.pro_desc}}</td>
+          <td style="border: black silid 1px;">{{item.pro_qty}}</td>
+          <td style="border: black silid 1px;">{{item.pro_mgf}}</td>
+          <td style="border: black silid 1px;">{{item.pro_image}}</td>
+          <td>
+            <button (click)="onDeleteProduct(item)" class="btn btn-primary">Delete</button>
+            <!-- <button (click)="onEditProduct(item)" style="background-color: blue;">Edit</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

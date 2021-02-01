@@ -1,0 +1,281 @@
+<div class="container">
+  <div *ngIf="flag">
+  <h2 style="text-align: center;">Basic Employee Details</h2>
+  <table class="table">
+    <thead>
+      <th style="border: black 1px solid;text-align: center;">Id</th>
+      <th  style="border: black 1px solid;text-align: center;">Name</th>
+      <th  style="border: black 1px solid;text-align: center;">Personal Phone</th>
+      <th  style="border: black 1px solid;text-align: center;">PAN</th>
+      <th style="border: black 1px solid;text-align: center;">Aadhar</th>
+      <th style="border: black 1px solid;text-align: center;">Account No</th>
+      <th style="border: black 1px solid;text-align: center;">IFSC</th>
+      <th style="border: black 1px solid;text-align: center;"> Edit Actions</th>
+      <th style="border: black 1px solid;text-align: center;"> Delete Actions</th>
+
+
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of reg_arr">
+        <td  style="border: black 1px solid;text-align: center;">{{item.EmployeeNo}}</td>
+        <td style="border: black 1px solid;text-align: center;">{{item.Name}}</td>
+         <td style="border: black 1px solid;text-align: center;">{{item.PersonalMobile}}</td>
+         <td style="border: black 1px solid;text-align: center;">{{item.PAN}}</td>
+         <td style="border: black 1px solid;text-align: center;">{{item.Aadhar}}</td>
+         <td style="border: black 1px solid;text-align: center;">{{item.AccountNumber}}</td>
+         <td style="border: black 1px solid;text-align: center;">{{item.IFSC}}</td>
+         <td style="border: black 1px solid;text-align: center;">
+           <button (click)="oneditbasicclick()">Edit Basic Details</button>&nbsp;
+           <button (click)="oneditaddressclick()">Edit Address</button>&nbsp;
+           <button (click)="oneditqualificationclick()">Edit Qualification</button>&nbsp;<br>
+           <button (click)="oneditexperienceclick()">Edit Experience</button>&nbsp;
+           <button (click)="oneditskillclick()">Edit Skill</button>&nbsp;
+         </td>
+         <td style="border: black 1px solid;text-align: center;">
+           <button (click)="ondeleteemp()">Delete Employee</button>&nbsp;
+           <button (click)="ondeletequalification()">Delete Qualification</button>&nbsp;<br>
+           <button (click)="ondeleteexperience()">Delete Experience</button>&nbsp;
+           <button (click)="ondeleteskill()">Delete Skill</button>&nbsp;
+         </td>
+
+        <td>
+          <!-- <button (click)="ondeleteclick(item)" class="btn btn-danger">Delete</button>&nbsp;&nbsp;
+          <button (click)="editclick(item)" class="btn btn-warning">Edit</button> -->
+        </td>
+      </tr>
+    </tbody>
+
+  </table><br><br>
+  <button (click)="onaddclick()">Add New Employee</button>&nbsp;&nbsp;
+  <button (click)="onshowclick()">Show Full Details</button>
+  </div>
+</div>
+
+<div class="container">
+  <div *ngIf="flag1">
+  <h2>Registration Details</h2>
+  <button class="btn btn-primary" (click)="onhideclick()">Hide</button>
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Title</th>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Last Name</th>
+      <th>Gender</th>
+      <th>DOB</th>
+      <th>Age</th>
+      <th>Official Phone</th>
+      <th>Personal Phone</th>
+      <!-- <th>Extn Ofc Phn</th> -->
+      <th>Fax</th>
+      <th>Office Mail</th>
+      <th>Personal Mail</th>
+      <th>Photo</th>
+      <th>Birth Place</th>
+      <th>Relegion</th>
+      <th>Cast</th>
+      <th>Nationality</th>
+      <th>Voter ID</th>
+      <th>PAN</th>
+      <th>Aadhar</th>
+      <th>Marital Status</th>
+      <th>Bank Name</th>
+      <th>Account Type</th>
+      <th>Payment Type</th>
+      <th>Account No</th>
+      <th>IFSC</th>
+
+
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of reg_arr">
+        <td>{{item.EmployeeNo}}</td>
+        <td>{{item.Name}}</td>
+        <td>{{item.Title}}</td>
+        <td>{{item.FirstName}}</td>
+        <td>{{item.MiddleName}}</td>
+        <td>{{item.LastName}}</td>
+        <td>{{item.Gender}}</td>
+        <td>{{item.DOB}}</td>
+        <td>{{item.EmployeeAge}}</td>
+        <td>{{item.OfficialPhone}}</td>
+         <td>{{item.PersonalMobile}}</td>
+         <!-- <td>{{item.extn_ofc_phn}}</td> -->
+         <td>{{item.Fax}}</td>
+          <td>{{item.OfficialEmail}}</td>
+         <td>{{item.PersonalEmail}}</td>
+         <td>{{item.PhotoFile}}</td>
+         <td>{{item.BirthPlace}}</td>
+         <td>{{item.Religion}}</td>
+         <td>{{item.Cast}}</td>
+         <td>{{item.Nationality}}</td>
+         <td>{{item.VoterId}}</td>
+         <td>{{item.PAN}}</td>
+         <td>{{item.Aadhar}}</td>
+         <td>{{item.MaritalStatus}}</td>
+         <td>{{item.BankName}}</td>
+         <td>{{item.AccountType}}</td>
+         <td>{{item.PaymentType}}</td>
+         <td>{{item.AccountNumber}}</td>
+         <td>{{item.IFSC}}</td>
+
+        <td>
+          <!-- <button (click)="ondeleteclick(item)" class="btn btn-danger">Delete</button>&nbsp;&nbsp;
+          <button (click)="editclick(item)" class="btn btn-warning">Edit</button> -->
+        </td>
+      </tr>
+    </tbody>
+
+  </table><br><br>
+  <h2>Address Details</h2>
+  <h3>Permanent Address</h3>
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Dno/Street</th>
+      <th>Village</th>
+      <th>Post Office</th>
+      <th>Mandal</th>
+      <th>District</th>
+      <th>Pin Code</th>
+      <th>Country</th>
+      <th>State</th>
+      <th>City</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of permanent_arr">
+        <td>{{item.Id}}</td>
+        <td>{{item.AddressPermanent}}</td>
+        <!-- <td>{{item.post_office}}</td> -->
+        <!-- <td>{{item.mandal}}</td> -->
+        <td>{{item.District}}</td>
+        <td>{{item.Pin}}</td>
+        <td>{{item.Country}}</td>
+        <td>{{item.State}}</td>
+        <td>{{item.City}}</td>
+        <td>
+          <!-- <button (click)="ondeleteemployee(item)" class="btn btn-danger">Delete</button>&nbsp;&nbsp;
+          <button (click)="editemp(item)" class="btn btn-warning">Edit</button> -->
+        </td>
+      </tr>
+    </tbody>
+
+  </table><br><br>
+  <h3>Present Address</h3>
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Dno/Street</th>
+      <th>Village</th>
+      <th>Post Office</th>
+      <th>Mandal</th>
+      <th>District</th>
+      <th>Pin Code</th>
+      <th>Country</th>
+      <th>State</th>
+      <th>City</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of present_arr">
+        <td>{{item.Id}}</td>
+        <!-- <td>{{item.present_village}}</td> -->
+        <!-- <td>{{item.presentpost_office}}</td> -->
+        <td>{{item.AddressPermanent}}</td>
+        <td>{{item.District}}</td>
+        <td>{{item.Pin}}</td>
+        <td>{{item.Country}}</td>
+        <td>{{item.State}}</td>
+        <td>{{item.City}}</td>
+        <td>
+          <!-- <button (click)="ondeleteemployee(item)" class="btn btn-danger">Delete</button>&nbsp;&nbsp;
+          <button (click)="editemp(item)" class="btn btn-warning">Edit</button> -->
+        </td>
+      </tr>
+    </tbody>
+
+  </table><br><br>
+  <h2>Qualification Display</h2>
+  <table class="table">
+    <thead>
+      <th> Id</th>
+      <th>Qualification</th>
+      <th>Institute</th>
+      <th>Year</th>
+      <th>Score</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of quali_arr">
+        <td>{{item.Id}}</td>
+        <td>{{item.Qualification}}</td>
+        <td>{{item.Institute}}</td>
+        <td>{{item.PassingYear}}</td>
+        <td>{{item.Score}}</td>
+        <td>
+          <!-- <button (click)="ondeleteproduct(item)" class="btn btn-danger">Delete</button>&nbsp;&nbsp;
+          <button (click)="editpro(item)" class="btn btn-warning">Edit</button> -->
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+  <h2>Experience Display</h2>
+  <table class="table">
+    <thead>
+      <th> Id</th>
+      <th>From Date</th>
+      <th>To Date</th>
+      <th>Organisation</th>
+      <th>Experience</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of exp_arr">
+        <td>{{item.Id}}</td>
+        <td>{{item.FromDate}}</td>
+        <td>{{item.ToDate}}</td>
+        <td>{{item.Organisation}}</td>
+        <td>{{item.Experience}}</td>
+        <td>
+          <!-- <button (click)="ondeleteproduct(item)" class="btn btn-danger">Delete</button>&nbsp;&nbsp;
+          <button (click)="editpro(item)" class="btn btn-warning">Edit</button> -->
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+<h2>Skill Display</h2>
+<table class="table">
+  <thead>
+    <th> Id</th>
+    <th>Skill Catagory</th>
+    <th>Skill</th>
+    <th>Skill Level</th>
+    <th>IS Current</th>
+    <th>Experience</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of skill_arr">
+      <td>{{item.Id}}</td>
+      <td>{{item.SkillCat}}</td>
+      <td>{{item.Skill}}</td>
+      <td>{{item.SkillLevel}}</td>
+      <td>{{item.IsCurrent}}</td>
+      <td>{{item.Experience}}</td>
+      <td>
+        <!-- <button (click)="ondeleteproduct(item)" class="btn btn-danger">Delete</button>&nbsp;&nbsp;
+        <button (click)="editpro(item)" class="btn btn-warning">Edit</button> -->
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+
+</div>
+</div>
+
+

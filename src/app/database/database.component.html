@@ -1,0 +1,72 @@
+<div class="container">
+  <h2>Task Display</h2>
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Status</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of Todo_arr">
+        <td>{{item.Id}}</td>
+        <td>{{item.Title}}</td>
+        <td>{{item.Status}}</td>
+        <td>
+          <button (click)="ondeleteclick(item)" class="btn btn_danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table><br><br>
+  <h2>Employee Display</h2>
+  <table class="table">
+    <thead>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Password</th>
+      <th>Phone</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of Details_arr">
+        <td>{{item.user_email}}</td>
+        <td>{{item.user_name}}</td>
+        <td>{{item.user_password}}</td>
+        <td>{{item.user_mobile_no}}</td>
+        <td>
+          <button (click)="ondeleteemployee(item)" class="btn btn_danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table><br><br>
+  <h2>Product Display</h2>
+  <table class="table">
+    <thead>
+      <th>Pro Id</th>
+      <th>Pro Name</th>
+      <th>Pro Price</th>
+      <th>Pro Desc</th>
+      <th>Pro Qty</th>
+      <th>Pro Mfg</th>
+      <th>Pro Img</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of Pro_arr">
+        <td>{{item.pro_id}}</td>
+        <td>{{item.pro_name}}</td>
+        <td>{{item.pro_price}}</td>
+        <td>{{item.pro_desc}}</td>
+        <td>{{item.pro_qty}}</td>
+        <td>{{item.pro_mfg}}</td>
+        <td>{{item.pro_image}}</td>
+        <td>
+          <button (click)="ondeleteproduct(item)" class="btn btn_danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
+

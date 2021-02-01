@@ -1,0 +1,70 @@
+<div class="container">
+  <mat-toolbar color="primary">
+    <button><mat-icon>menu</mat-icon></button> &nbsp;&nbsp;
+  <h4>Novodhi Insurance</h4>
+</mat-toolbar><br>&nbsp;
+  <mat-form-field appearance="fill">
+    <mat-label>Select Option</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+
+  <div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="data_type">
+    <th mat-header-cell *matHeaderCellDef> Data Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.data_type}} </td>
+  </ng-container>
+  <ng-container matColumnDef="last_updated">
+    <th mat-header-cell *matHeaderCellDef> Last Updated </th>
+    <td mat-cell *matCellDef="let element"> {{element.last_updated}} </td>
+  </ng-container>
+
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="catagory">
+    <th mat-header-cell *matHeaderCellDef> Catagory </th>
+    <td mat-cell *matCellDef="let element"> {{element.catagory}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Actions </th>
+    <td mat-cell *matCellDef="let element" style="text-align: center;"> <button (click)="openDialog()"><mat-icon aria-hidden="false" aria-label="Example create icon" click="">create</mat-icon></button>&nbsp;
+      <button  (click)="openview()"><mat-icon aria-hidden="false" aria-label="Example view_headline icon">view_headline</mat-icon></button>&nbsp;
+      <button ><mat-icon aria-hidden="false" aria-label="Example file_copy icon">file_copy</mat-icon></button>
+
+  </ng-container>
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let element" colour="danger">
+      <button (click)="opendelete()"><mat-icon aria-hidden="false" aria-label="Example delete icon" colour="danger">delete</mat-icon></button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+</div>

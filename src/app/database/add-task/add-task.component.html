@@ -1,0 +1,114 @@
+<div class="container">
+
+  <div class="row" *ngIf="flag">
+    <h1>Add Details</h1>
+     <form [formGroup]='task'(ngSubmit)='onaddclick()'>
+       <div class="form-group">
+         <input class="form-control " placeholder="Enter Id" formControlName='Id'>
+         <p *ngIf="task.get('Id').hasError('required') && !task.get('Id').pristine "
+        class="lblError">Id is required</p>
+       </div>
+
+       <div class="form-group">
+        <input class="form-control " placeholder="Enter Title" formControlName='Title'>
+        <p *ngIf="task.get('Title').hasError('required') && !task.get('Title').pristine "
+        class="lblError">Title is required</p>
+        <p *ngIf="task.get('Title').hasError('minLegth') && !task.get('Title').pristine "
+        class="lblError">Minimum 8 charecters</p>
+      </div>
+      <div class="form-group">
+        <input class="form-control " placeholder="Enter Status" formControlName='Status'>
+        <p *ngIf="task.get('Status').hasError('required') && !task.get('Status').pristine "
+        class="lblError">Status is required</p>
+      </div>
+      <div>
+        <button type="submit"class="btn btn-primary">Add</button><br>
+      </div><br>
+      <button (click)="nextclick()" class="btn btn-primary">Proceed</button>
+      </form>
+  </div>
+
+  <div class="row" *ngIf="flag1">
+    <h1>Add Employee</h1>
+     <form [formGroup]='employee'(ngSubmit)='addemployee()'>
+       <div class="form-group">
+         <input class="form-control " placeholder="Enter Email" formControlName='user_email'>
+         <!-- <p *ngIf="task.get('user_email').hasError('required') && !task.get('user_email').pristine "
+         class="lblError">Email is required</p> -->
+         <!-- <p *ngIf="task.get('user_email').hasError('email') && !task.get('user_email').pristine "
+         class="lblError">Enter Currect Email</p> -->
+       </div>
+       <div class="form-group">
+        <input class="form-control " placeholder="Enter Name" formControlName='user_name'>
+        <!-- <p *ngIf="task.get('user_name').hasError('required') && !task.get('user_name').pristine "
+        class="lblError">Name is required</p> -->
+      </div>
+      <div class="form-group">
+        <input class="form-control " placeholder="Enter Password" formControlName='user_password'>
+        <!-- <p *ngIf="task.get('password').hasError('required') && !task.get('password').pristine "
+        class="lblError">Password is required</p> -->
+      </div>
+      <div class="form-group">
+        <input class="form-control " placeholder="Enter Phone" formControlName='user_mobile_no'>
+        <!-- <p *ngIf="task.get('user_phonenumber').hasError('required') && !task.get('user_phonenumber').pristine "
+        class="lblError">Phone is required</p>
+        <p *ngIf="task.get('user_phonenumber').hasError('minLegth') && !task.get('user_phonenumber').pristine "
+        class="lblError">Minimum 10 Charecters</p>
+        <p *ngIf="task.get('user_phonenumber').hasError('maxLength') && !task.get('user_phonenumber').pristine "
+        class="lblError">MAximum 10 Charecters</p> -->
+      </div>
+      <div>
+        <button type="submit"class="btn btn-primary">Add</button><br>
+      </div><br>
+      <button (click)="backclick()" class="btn btn-primary">Back</button>&nbsp;&nbsp;
+      <button (click)="proeedclick()" class="btn btn-primary">Next</button>
+
+      </form>
+  </div>
+
+  <div class="row" *ngIf="flag2">
+    <h1>Add Product</h1>
+     <form [formGroup]='product'(ngSubmit)='addproduct()'>
+       <div class="form-group">
+         <input class="form-control " placeholder="Enter Id" formControlName='pro_id'>
+         <!-- <p *ngIf="task.get('pro_id').hasError('required') && !task.get('pro_id').pristine "
+         class="lblError">Id is required</p> -->
+       </div>
+       <div class="form-group">
+        <input class="form-control " placeholder="Enter Name" formControlName='pro_name'>
+        <!-- <p *ngIf="task.get('pro_name').hasError('required') && !task.get('pro_name').pristine "
+        class="lblError">Name is required</p> -->
+      </div>
+      <div class="form-group">
+        <input class="form-control " placeholder="Enter Price" formControlName='pro_price'>
+        <!-- <p *ngIf="task.get('pro_price').hasError('required') && !task.get('pro_price').pristine "
+        class="lblError">price is required</p> -->
+      </div>
+      <div class="form-group">
+        <input class="form-control " placeholder="Enter Description" formControlName='pro_desc'>
+        <!-- <p *ngIf="task.get('pro_dec').hasError('required') && !task.get('pro_dec').pristine "
+        class="lblError">Description is required</p> -->
+      </div>
+      <div class="form-group">
+       <input class="form-control " placeholder="Enter Quantity" formControlName='pro_qty'>
+       <!-- <p *ngIf="task.get('pro_qty').hasError('required') && !task.get('pro_qty').pristine "
+       class="lblError">Quantity is required</p> -->
+     </div>
+     <div class="form-group">
+       <input class="form-control " placeholder="Enter Mfg" formControlName='pro_mfg'>
+       <!-- <p *ngIf="task.get('pro_mfg').hasError('required') && !task.get('pro_mfg').pristine "
+       class="lblError">Mfg is required</p> -->
+     </div>
+     <div class="form-group">
+      <input class="form-control " placeholder="Enter Image" formControlName='pro_image'>
+      <!-- <p *ngIf="task.get('pro_img').hasError('required') && !task.get('pro_img').pristine "
+      class="lblError">Image is required</p> -->
+    </div>
+      <div>
+        <button type="submit"class="btn btn-primary">Add</button><br>
+      </div><br>
+      <button (click)="previousclick()" class="btn btn-primary">Back</button>
+      </form>
+  </div>
+</div>
+
