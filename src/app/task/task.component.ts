@@ -57,7 +57,7 @@ export class TaskComponent  {
 
    }
 
-   openDialog(): void {
+   openEdit(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       width: '500px',
       height:'400px',
